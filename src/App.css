@@ -8,7 +8,6 @@ html {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
-  letter-spacing: 1.1px;
 }
 
 body,
@@ -18,3 +17,443 @@ html {
   background: #FFFFFF;
   font-family: "Proxima Nova", sans-serif;
 }
+
+:root {
+  --red: #DB2121;
+  --bold-red: #C6062B;
+  --brown: #261D1D;
+  --beige: #CFCFCE;
+}
+
+/* --- Navbar start --- */
+
+.navbar-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position : fixed;
+  z-index: 1030;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #111;
+  background-color: #FFFFFF;
+}
+
+.logo-navbar{
+  height: 55px;
+  width: 80px;
+  box-sizing: border-box;
+}
+
+.navbar-img-container a{
+  text-decoration: none;
+  box-sizing: border-box;}
+
+.navbar_item {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.navbar-item-container{
+  width: 60%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  white-space: nowrap;
+  color: #111;
+}
+
+.link::before,
+.link::after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: var(--bold-red);
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+
+.link::before {
+  content: '';
+}
+
+.link--elara {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 1.1rem;
+}
+
+.link--elara::before {
+  transform-origin: 50% 100%;
+  transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+  clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+}
+
+.link--elara:hover::before {
+  transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+  clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+}
+
+.link--elara span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.link--elara:hover span {
+  transform: translate3d(0, -2px, 0);
+}
+
+/* --- Navbar end --- */
+
+/* --- Header start --- */
+
+.headerImageContainer{
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)),url("./images/christopher-burns-Wiu3w-99tNg-unsplash\ \(1\).jpg");
+  /* background-image: linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 0.4)),url("./images/christopher-burns-Wiu3w-99tNg-unsplash\ \(1\).jpg"); */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerTextContainer{
+  display: absolute;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+ .headerTextContainer h1{
+  font-size: 12rem;
+  color: rgb(5, 5, 5);
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 0 100px rgb(255, 255, 255);
+  /* -webkit-text-stroke: 0.4px #FFFFFF; */
+ }
+.headerTextContainer p{
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--red);
+  text-shadow: 0 0 100px rgb(255, 255, 255);
+  letter-spacing: 3px;
+}
+
+  /* arrow */
+  .center-con {
+      position: absolute;
+      top: 80%;
+      left: 47%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+  }
+  
+  .round {
+      position: relative;
+      border: 3px solid var(--red);
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      cursor: pointer;
+      cursor: hand;
+  }
+  
+  .round span {
+      z-index: 999;
+      height: 3px;
+      margin:1px;
+      width: 30px;
+      background: var(--red);
+      transition: 0.4s ease;
+  }
+  
+  .round span:first-child {
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      left: 23%;
+      bottom: 35%;
+  }
+  
+  .round span:nth-child(2) {
+      display: block;
+      position: absolute;
+      transform: rotate(-45deg);
+      left: 44%;
+      bottom: 35%;
+  }
+  
+  .round span:nth-child(3) {
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      left: 23%;
+      bottom: 54%;
+  }
+  
+  .round span:nth-child(4) {
+      display: block;
+      position: absolute;
+      transform: rotate(-45deg);
+      left: 44%;
+      bottom: 54%;
+  }
+  /* arrow end */
+
+/* --- Header end --- */
+
+/* --- Features --- */
+
+.container-features{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--beige);
+  padding: 6.25rem 0;
+}
+
+.features-title{
+  position: relative;
+}
+
+.features-title::before,
+.features-title::after {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: var(--bold-red);
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+
+.features-title::before {
+  content: '';
+}
+
+.container-features-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1170px;
+  padding-top: 3rem;
+}
+
+.feature-icon-circle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.single-feature{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem 0;
+  box-sizing: border-box;
+}
+
+.single-feature h3{
+  text-align: center;
+  width:  80%;
+}
+
+.single-feature .feature-icon-circle, .single-feature h3{
+  padding: .4rem;
+}
+
+/* --- Features --- */
+
+/* --- About Us start --- */
+
+.about-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 6.25rem 0;
+}
+
+.img-container-about img{
+  width: 550px;
+  height: 370px;
+  border-radius: 5px;
+}
+
+.about-content{
+  width: 550px;
+  height: 370px;
+}
+
+.text-content-about{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 90%;
+  height: 100%;
+}
+
+.text-content-about h1{
+  position: relative;
+}
+
+.text-content-about h1::before,
+.text-content-about h1::after {
+  position: absolute;
+  width: 50%;
+  height: 4px;
+  background: var(--bold-red);
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+
+.text-content-about h1::before {
+  content: '';
+}
+
+/* --- About Us end ---*/
+
+/* --- History start --- */
+
+.history-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 6.25rem 0;
+  background-color: var(--beige);
+}
+
+.history-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 1170px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.title-content-history h1{
+  position: relative;
+}
+
+.title-content-history h1::before,
+.title-content-history h1::after {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: var(--bold-red);
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+
+.title-content-history h1::before {
+  content: '';
+}
+
+.text-content-history{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.button-history-container{
+  padding: .5rem 3rem;
+  border-radius: 5px;
+  background-color: var(--brown);
+  color: var(--beige);
+  cursor: pointer;
+  cursor: hand;
+  position: relative;
+}
+
+.button-history-container-inner{
+  width: 25rem;
+}
+
+/* --- History end --- */
+
+/* --- Calidad start --- */
+
+.calidad-main-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 6.25rem 0;
+  background-color: #FFFFFF;
+}
+
+.calidad-text-container{
+  width: 1170px;
+}
+
+.calidad-text-container ul{
+  padding: .3rem 0;
+}
+
+.calidad-text-container ul li{
+  margin-left: 3rem;
+  padding: .3rem 0;
+}
+
+.calidad-title-container{
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.calidad-title-container h1{
+  position: relative;
+}
+
+.calidad-title-container h1::before,
+.calidad-title-container h1::after {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: var(--bold-red);
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+
+.calidad-title-container h1::before {
+  content: '';
+}
+
+/* --- Calidad end --- */
