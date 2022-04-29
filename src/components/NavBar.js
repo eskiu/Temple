@@ -30,24 +30,34 @@ function NavBar() {
             </motion.div>
             <div className='navbar-item-container'>
                 <li className="navbar_item">
-                    <a href="#about" className="link link--elara">
+                    <motion.a
+                        href="#about"
+                        className="link"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}>
                         <span>Nosotros</span>
-                    </a>
-                    <a href="#history" className="link link--elara">
+                    </motion.a>
+                    <motion.a
+                        href="#history"
+                        className="link"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}>
                         <span>Historia</span>
-                    </a>
-                    <a href="#" className="link link--elara">
-                        <span>Galeria</span>
-                    </a>
-                    <a href="#calidad" className="link link--elara">
+                    </motion.a>
+                    <motion.a
+                        href="#calidad"
+                        className="link"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}>
                         <span>Calidad</span>
-                    </a>
-                    <a href="#" className="link link--elara">
-                        <span>Valores</span>
-                    </a>
-                    <a href="#" className="link link--elara">
+                    </motion.a>
+                    <motion.a
+                        href="#contact"
+                        className="link"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}>
                         <span>Contacto</span>
-                    </a>
+                    </motion.a>
                 </li>
             </div>
         </nav>

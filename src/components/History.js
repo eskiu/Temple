@@ -6,7 +6,10 @@ function History() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div id='history' className="history-container">
+        <div
+            id='history'
+            className="history-container"
+        >
             <div className="history-content">
                 <div className='title-content-history'>
                     <h1>NUESTRA HISTORIA</h1>
@@ -25,22 +28,24 @@ function History() {
                 </div>
             </div>
             <motion.div
-                transition={{ layout: { type: 'spring', duration: 1 } }}
+                transition={{ layout: { type: 'spring', duration: 0.2 } }}
                 layout
                 onClick={() => { setIsOpen(!isOpen) }}
                 className="button-history-container"
                 style={{
                     borderRadius: "1rem",
-                    boxShadow: "0px 10px 30px rgba(0,0,0,0.5)"
+                    boxShadow: "0px 10px 30px rgba(0,0,0,0.5)",
                 }}
             >
 
-                <motion.h2 layout="position" className="nameButton-history-container">NUESTRA PLANTA</motion.h2>
+                <motion.h2
+                    layout="position"
+                    className="nameButton-history-container">NUESTRA PLANTA</motion.h2>
                 {isOpen &&
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.3 }}
                         exit={{ opacity: 0 }}
                         className="button-history-container-inner"
                     >

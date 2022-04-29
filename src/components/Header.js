@@ -1,5 +1,5 @@
 import React from 'react';
-import logoTempleTexto from '../images/Temple-Logo-Texto.png'
+import logoTempleTexto from '../images/Retroiluminado.png'
 import { motion } from 'framer-motion';
 
 function Header() {
@@ -12,24 +12,24 @@ function Header() {
                         className='headerTextContainer'
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        transition={{ duration: 1 }}>
-                        {/* <img src={logoTempleTexto} alt="" /> */}
-                        <h1>Temple</h1>
-                        <p><strong>SOLUCIONES</strong> METALÚRGICAS</p>
+                        transition={{ duration: .6 }}>
+                        <img src={logoTempleTexto} alt="" />
                     </motion.div>
                 </div>
-                <motion.div
-                    className="center-con"
-                    initial={{ scale: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}>
-                    <div className="round">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </motion.div>
+                <a href="#features">
+                    <motion.div
+                        className="center-con"
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}>
+                        <div className="round">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </motion.div>
+                </a>
             </div>
         </>
     )
