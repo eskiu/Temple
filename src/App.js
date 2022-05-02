@@ -6,6 +6,7 @@ import About from './components/About';
 import History from './components/History'
 import Calidad from './components/Calidad';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <History />
       <Calidad />
       <Contact />
+      <Footer />
     </div>
   );
 }
