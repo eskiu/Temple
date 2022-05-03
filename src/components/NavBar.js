@@ -21,7 +21,7 @@ function NavBar() {
                 }}
                 whileHover={{
                     scale: 1.5,
-                    transition: 1
+                    transition: 0.5
                 }}
             >
                 <a href="">

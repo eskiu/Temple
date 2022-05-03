@@ -511,12 +511,18 @@ html {
   justify-content: center;
 }
 
-.contact-data-input{
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.contact-data-input, .contact-data-input-number{
   width: 100%;
   margin-top: 1rem;
 }
 
-.contact-data-input input{
+.contact-data-input input, .contact-data-input-number input{
   border: none;
   background-color: transparent;
   border-bottom: 1px solid var(--brown);
@@ -550,6 +556,11 @@ html {
   color: var(--beige);
   cursor: pointer;
   cursor: hand;
+}
+
+.contact-data-button button:disabled{
+  background-color: gray;
+  cursor: not-allowed;
 }
 
 .errorMessage{
