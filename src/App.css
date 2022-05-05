@@ -754,12 +754,15 @@ input::-webkit-inner-spin-button {
 
   .headerImageContainer{
     min-height: 60vh;
-    margin-top: 3rem;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .headerImageContainer img{
-    margin-top: 8rem;
+    margin-top: 4rem;
+  }
+
+  .arrow{
+    display: none;
   }
 }
 

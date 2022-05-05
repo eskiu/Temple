@@ -16,7 +16,7 @@ function Header() {
                         <img src={logoTempleTexto} alt="" />
                     </motion.div>
                 </div>
-                <a href="#features">
+                <a className='arrow' href="#features">
                     <motion.div
                         className="center-con"
                         initial={{ scale: 1 }}
