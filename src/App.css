@@ -951,6 +951,19 @@ input::-webkit-inner-spin-button {
     padding: 3rem 0;
   }
 
+  .container-features,
+  .about-container,
+  .history-container,
+  .calidad-main-container{
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  
+  .history-content{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .about-content, .history-content, 
   .button-history-container-inner, 
   .contact-data-textarea textarea,
@@ -962,13 +975,6 @@ input::-webkit-inner-spin-button {
   .contact-data-data{
     display: flex;
     flex-direction: column;
-  }
-
-  .contact-container-indeed, 
-  .calidad-main-container,
-  .about-container{
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   .about-content{
