@@ -527,6 +527,16 @@ html {
   padding-left: 1rem;
 }
 
+.contact-data-item-text a{
+  color: var(--brown);
+  text-decoration: none;
+}
+
+.contact-data-item-text a:hover{
+  color: var(--bold-red);
+  
+}
+
 .contact-data-form{
   display: flex;
   flex-direction: column;

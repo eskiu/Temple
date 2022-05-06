@@ -46,46 +46,39 @@ function NavBar() {
                 </a>
             </motion.div>
             <ul className={active}>
-                <li className='nav__item'>
-                    <motion.a
-                        href="#about"
-                        className="link nav__link"
-                        onClick={navToggle}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}>
+                <motion.li
+                    className='nav__item'
+                    onClick={navToggle}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}>
+                    <a href="#about" className="link nav__link" onClick={navToggle}>
                         <span>Nosotros</span>
-                    </motion.a>
-                </li>
-                <li className='nav__item'>
-                    <motion.a
-                        href="#history"
-                        className="link nav__link"
-                        onClick={navToggle}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}>
+                    </a>
+                </motion.li>
+                <motion.li
+                    className='nav__item'
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}>
+                    <a href="#history" className="link nav__link" onClick={navToggle}>
                         <span>Historia</span>
-                    </motion.a>
-                </li>
-                <li className='nav__item'>
-                    <motion.a
-                        href="#calidad"
-                        className="link nav__link"
-                        onClick={navToggle}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}>
+                    </a>
+                </motion.li>
+                <motion.li
+                    className='nav__item'
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}>
+                    <a href="#calidad" className="link nav__link" onClick={navToggle}>
                         <span>Calidad</span>
-                    </motion.a>
-                </li>
-                <li className='nav__item'>
-                    <motion.a
-                        href="#contact"
-                        className="link nav__link"
-                        onClick={navToggle}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}>
+                    </a>
+                </motion.li>
+                <motion.li
+                    className='nav__item'
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}>
+                    <a href="#contact" className="link nav__link" onClick={navToggle}>
                         <span>Contacto</span>
-                    </motion.a>
-                </li>
+                    </a>
+                </motion.li>
             </ul>
             <div onClick={navToggle} className={toggleIcon}>
                 <div className="line1"></div>

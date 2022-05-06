@@ -22,8 +22,8 @@ function FormContact() {
         setFormErrors(validate(formValues))
         setIsSubmit(true);
         ((Object.keys(formErrors).length === 0 && formValues.name !== "" && formValues.phone !== "" && formValues.message !== "")
-            ? (emailjs.send('service_tmb5ehv', 'template_a74d5zr', formValues, 'BZT0DYr4oaxSexHBO')
-                .then(response => {
+            ? (emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formValues, process.env.REACT_APP_PUBLIC_KEY)
+                .then(() => {
                     setFormValues(initialValues);
                     setIsSubmit(false);
                     toast.success('Mensaje enviado correctamente!', {
@@ -100,7 +100,7 @@ function FormContact() {
                 </div>
                 <p className='errorMessage'>{formErrors.message}</p>
                 <div className="contact-data-button">
-                    <button disabled={formValues.name == "" || formValues.phone == "" || formValues.message == ""}> Enviar</button>
+                    <button disabled={formValues.name === "" || formValues.phone === "" || formValues.message === ""}> Enviar</button>
                 </div>
             </form>
             <ToastContainer />
