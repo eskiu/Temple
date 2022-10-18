@@ -10,7 +10,8 @@ function FormContact() {
     const initialValues = { name: "", phone: "", message: "" };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
+    const [sending, setSending] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -20,12 +21,18 @@ function FormContact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues))
-        setIsSubmit(true);
-        ((Object.keys(formErrors).length === 0 && formValues.name !== "" && formValues.phone !== "" && formValues.message !== "")
-            ? (emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formValues, process.env.REACT_APP_PUBLIC_KEY)
+        setIsSubmitting(true);
+    }
+
+    useEffect(() => {
+
+        if (Object.keys(formErrors).length === 0 && isSubmitting) {
+            setSending(true);
+            (emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formValues, process.env.REACT_APP_PUBLIC_KEY)
                 .then(() => {
                     setFormValues(initialValues);
-                    setIsSubmit(false);
+                    setIsSubmitting(false);
+                    setSending(false);
                     toast.success('Mensaje enviado correctamente!', {
                         position: "bottom-right",
                         autoClose: 2500,
@@ -36,7 +43,7 @@ function FormContact() {
                         progress: undefined,
                     });
                 }).catch(err => {
-                    setIsSubmit(false);
+                    setIsSubmitting(false);
                     toast.error(`Error al enviar el mensaje. (${err.status})`, {
                         position: "bottom-right",
                         autoClose: 2500,
@@ -46,17 +53,9 @@ function FormContact() {
                         draggable: true,
                         progress: undefined,
                     });
-                }))
-            : toast.error('Error con la base de datos. Por favor, ponganse en contacto vía llamada/whatsapp', {
-                position: "bottom-right",
-                autoClose: 2500,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            }));
-    }
+                }));
+        }
+    }, [formErrors]);
 
 
     const validate = (values) => {
@@ -76,14 +75,6 @@ function FormContact() {
 
         return errors;
     }
-
-    useEffect(() => {
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            setIsSubmit(false);
-            setFormValues(initialValues);
-        }
-    }, [formErrors]);
-
     return (
         <>
             <form className="contact-data-form" onSubmit={handleSubmit}>
@@ -99,9 +90,9 @@ function FormContact() {
                     <textarea rows="6" cols="80" name="message" placeholder=" Escriba algo" value={formValues.message} onChange={handleChange}></textarea>
                 </div>
                 <p className='errorMessage'>{formErrors.message}</p>
-                <div className="contact-data-button">
-                    <button disabled={formValues.name === "" || formValues.phone === "" || formValues.message === ""}> Enviar</button>
-                </div>
+                <button className="contact-data-button" disabled={sending}>
+                    {sending ? 'Enviando...' : 'Enviar'}
+                </button>
             </form>
             <ToastContainer />
         </>

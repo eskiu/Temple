@@ -546,6 +546,7 @@ html {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
@@ -579,7 +580,7 @@ input::-webkit-inner-spin-button {
   border-right: 1px solid var(--brown);
 }
 
-.contact-data-button button{
+.contact-data-button{
   margin-top: 1rem;
   padding: .6rem;
   border: none;
@@ -590,7 +591,7 @@ input::-webkit-inner-spin-button {
   cursor: hand;
 }
 
-.contact-data-button button:disabled{
+.contact-data-button:disabled{
   background-color: gray;
   cursor: not-allowed;
 }
